@@ -1,0 +1,25 @@
+public class DigitSumCalculator {
+
+    public static int sumDigits(long n) {
+        int sum = 0;
+        
+        // Loop until all digits are extracted
+        while (n != 0) {
+            // Extract the last digit
+            sum += n % 10;
+            // Remove the last digit
+            n /= 10;
+        }
+        
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        // Test the method with a few examples
+        System.out.println("Sum of digits in 234: " + sumDigits(234)); // Output: 9
+        System.out.println("Sum of digits in 12345: " + sumDigits(12345)); // Output: 15
+        System.out.println("Sum of digits in 987654321: " + sumDigits(987654321)); // Output: 45
+        System.out.println("Sum of digits in 1001: " + sumDigits(1001)); // Output: 2
+        System.out.println("Sum of digits in 0: " + sumDigits(0)); // Output: 0
+    }
+}
